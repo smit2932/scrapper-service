@@ -21,5 +21,5 @@ module.exports = function (app) {
   app.use(requestId())
   app.use(log(logger, config.logs))
   app.use(httpContextMiddleware())
-  logger.debug('Configuration-mgmt-Service is running on port 8082')
+  logger.debug('Scrap-mgmt-Service is running on port 3000')
 }
