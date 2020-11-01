@@ -27,8 +27,7 @@ https://web.postman.co/collections/3985211-e75eff71-e990-4878-a45f-9d49df3370b5?
 install nodemon dev tool in global for achive contineous restarting due to changes. 
 ## Instructions to run
 1. Install packages: `npm install`
-2. Change out the database configuration in lib/db.js
-3. Launch command: `nodemon`
+2. Launch command in the level of package.json file: `nodemon`
 
 ## Instructions to test
 1. npm run test
