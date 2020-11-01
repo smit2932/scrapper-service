@@ -1,0 +1,30 @@
+{
+  "database": {
+    "host": "10.0.4.4:27017,10.0.4.5:27017",
+    "default_db_name": "scrap_data",
+    "defaults": {
+      "createdBy": "SYSTEM",
+      "updatedBy": "SYSTEM"
+    },
+    "env": "qa",
+    "default_org_name": "redeem",
+    "replica_set": "qa_futurx",
+    "authentication": true,
+    "fetch_secrets": true,
+    "user": "mongodb-user-qa",
+    "pass": "mongodb-password-qa",
+    "auth_source": "admin",
+    "mongo_options": {
+      "useNewUrlParser": true
+    }
+  },
+  "logs": {
+    "level": "info",
+    "stream": "gelf",
+    "gelf_hostname": "10.0.2.10",
+    "gelf_port": 12201,
+    "obfuscate": {
+      "enabled": true
+    }
+  }
+}

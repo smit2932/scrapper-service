@@ -1,0 +1,68 @@
+{
+  "port": 8080,
+  "app": {
+    "name": "scrapping-service"
+  },
+  "default_host": "reward20.com",
+  "env": "-1",
+  "database": {
+    "host": "127.0.0.1:27017",
+    "default_db_name": "scrap_data",
+    "default_org_name": "scrap",
+    "defaults": {
+      "createdBy": "SYSTEM",
+      "updatedBy": "SYSTEM"
+    },
+    "authentication": false,
+    "fetch_secrets": false,
+    "user": "dbuser",
+    "pass": "passw0rd1",
+    "auth_source": "admin",
+    "mongo_options": {
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true 
+    }
+  },
+  "domain_names": {
+    "default_domain_name": "data"
+  },
+  "cors": {
+    "origin": "*",
+    "preflightContinue": true,
+    "methods": "POST, GET, PUT, DELETE, OPTIONS",
+    "optionsSuccessStatus": 204,
+    "allowedHeaders": [
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization, token, orgName, user_code, File-Name"
+    ],
+    "exposedHeaders": [
+      "Authorization, File-Name"
+    ]
+  },
+  "logs": {
+    "level": "debug",
+    "stream": "console",
+    "middleware": {
+      "logRequests": true,
+      "logResponses": true,
+      "exclusionList": []
+    },
+    "obfuscate": {
+      "enabled": true,
+      "masking_character": "*",
+      "types": {
+        "email": {
+          "find": "([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)",
+          "replace": "(?=.)[^@\n](?=[^@\n]*?@)"
+        },
+        "contact_number": {
+          "find": "(((\\+)[0-9]{3})|((\\+)[0-9]{2}))[1-9]{1}[0-9]{9}",
+          "replace": "(?=\\d{5})\\d"
+        }
+      },
+      "level_enabled": [
+        "info",
+        "debug"
+      ]
+    }
+  }
+}

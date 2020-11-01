@@ -1,0 +1,30 @@
+{
+  "database": {
+    "host": "10.0.5.6:{{mongodb-port-production}},10.0.5.7:{{mongodb-port-production}},10.0.5.8:{{mongodb-port-production}}",
+    "default_db_name": "redeem_rewards20",
+    "defaults": {
+      "createdBy": "SYSTEM",
+      "updatedBy": "SYSTEM"
+    },
+    "env": "-1",
+    "default_org_name": "reddem",
+    "replica_set": "production",
+    "authentication": true,
+    "fetch_secrets": true,
+    "user": "mongodb-user-production",
+    "pass": "mongodb-password-production",
+    "auth_source": "admin",
+    "mongo_options": {
+      "useNewUrlParser": true
+    }
+  },
+  "logs": {
+    "level": "info",
+    "stream": "gelf",
+    "gelf_hostname": "10.0.2.14",
+    "gelf_port": 12201,
+    "obfuscate": {
+      "enabled": true
+    }
+  }
+}

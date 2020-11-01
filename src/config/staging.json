@@ -1,0 +1,29 @@
+{
+  "database": {
+    "host": "10.0.6.4:{{mongodb-port-staging}}",
+    "default_db_name": "scrap_data",
+    "defaults": {
+      "createdBy": "SYSTEM",
+      "updatedBy": "SYSTEM"
+    },
+    "env": "staging",
+    "default_org_name": "redeem",
+    "authentication": true,
+    "fetch_secrets": true,
+    "user": "mongodb-user-staging",
+    "pass": "mongodb-password-staging",
+    "auth_source": "admin",
+    "mongo_options": {
+      "useNewUrlParser": true
+    }
+  },
+  "logs": {
+    "level": "info",
+    "stream": "gelf",
+    "gelf_hostname": "{{graylog-host}}",
+    "gelf_port": 12201,
+    "obfuscate": {
+      "enabled": true
+    }
+  }
+}
